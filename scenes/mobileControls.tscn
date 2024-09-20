@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://img/l_r.png" type="Texture" id=1]
+[ext_resource path="res://img/up.png" type="Texture" id=2]
+
+[node name="mobileControls" type="CanvasLayer"]
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2( 25, 561 )
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 1 )
+action = "left"
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2( 1252, 720 )
+rotation = -3.14159
+scale = Vector2( 0.15, 0.15 )
+normal = ExtResource( 1 )
+action = "right"
+
+[node name="up_left" type="TouchScreenButton" parent="."]
+position = Vector2( 27, 407 )
+scale = Vector2( 0.24, 0.24 )
+normal = ExtResource( 2 )
+action = "up"
+
+[node name="ul_right" type="TouchScreenButton" parent="."]
+position = Vector2( 1100, 411 )
+scale = Vector2( 0.24, 0.24 )
+normal = ExtResource( 2 )
+action = "up"

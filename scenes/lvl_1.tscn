@@ -1,0 +1,145 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scenes/monstr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/pol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/mobileControls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://img/pol.png" type="Texture" id=4]
+[ext_resource path="res://scripts/workspase_lvls.gd" type="Script" id=5]
+[ext_resource path="res://img/back.png" type="Texture" id=6]
+[ext_resource path="res://img/settings.png" type="Texture" id=7]
+[ext_resource path="res://fronts/a_StamperCm.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scripts/lvl_1.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 677, 320 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 981, 980 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 981, 980 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 981, 980 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 677, 320 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 677, 320 )
+
+[node name="lvl_1" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="workspase" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1280, 720 )
+script = ExtResource( 5 )
+
+[node name="back_lvl" type="Panel" parent="workspase"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1240.0
+margin_bottom = -680.0
+rect_min_size = Vector2( 1280, 720 )
+
+[node name="left_blok" type="Panel" parent="workspase/back_lvl"]
+unique_name_in_owner = true
+anchor_bottom = 1.0
+margin_right = 200.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="back" type="Button" parent="workspase/back_lvl/left_blok"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="settings" type="Button" parent="workspase/back_lvl/left_blok"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -88.0
+margin_top = 18.0
+margin_right = -18.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="coins" type="Label" parent="workspase/back_lvl/left_blok"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -68.5
+margin_top = 109.0
+margin_right = 68.5
+margin_bottom = 145.0
+rect_min_size = Vector2( 150, 50 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="right_blok" type="Panel" parent="workspase/back_lvl"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="heal" type="Label" parent="workspase/back_lvl/right_blok"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -68.5
+margin_top = 109.0
+margin_right = 68.5
+margin_bottom = 145.0
+rect_min_size = Vector2( 150, 50 )
+custom_fonts/font = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="monstr" parent="workspase/back_lvl" instance=ExtResource( 1 )]
+position = Vector2( 517, 625 )
+
+[node name="pol" parent="workspase/back_lvl" instance=ExtResource( 2 )]
+position = Vector2( -1, 720 )
+
+[node name="mobileControls" parent="workspase/back_lvl" instance=ExtResource( 3 )]
+
+[node name="items" type="Node2D" parent="workspase/back_lvl"]
+
+[node name="items2" type="Node2D" parent="workspase/back_lvl"]
+
+[node name="items3" type="Node2D" parent="workspase/back_lvl"]
